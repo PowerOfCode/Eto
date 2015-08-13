@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06F7AC59-0E70-4646-BBFA-C105D9664FD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Eto.Gl.Gtk</RootNamespace>
+    <AssemblyName>Eto.Gl.Gtk</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="GLDrawingArea.cs" />
+    <Compile Include="GtkGlSurfaceHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="atk-sharp">
+      <HintPath>..\packages\other\GtkSharp\2.12\lib\gtk-sharp-2.0\atk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdk-sharp">
+      <HintPath>..\packages\other\GtkSharp\2.12\lib\gtk-sharp-2.0\gdk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="glib-sharp">
+      <HintPath>..\packages\other\GtkSharp\2.12\lib\gtk-sharp-2.0\glib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-dotnet">
+      <HintPath>..\packages\other\GtkSharp\2.12\lib\gtk-sharp-2.0\gtk-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-sharp">
+      <HintPath>..\packages\other\GtkSharp\2.12\lib\gtk-sharp-2.0\gtk-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cairo">
+      <HintPath>..\packages\other\GtkSharp\2.12\lib\Mono.Cairo\Mono.Cairo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="OpenTK">
+      <HintPath>..\packages\OpenTK.1.1.1589.5942\lib\NET40\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eto\Eto.csproj">
+      <Project>{16289D2F-044C-49EF-83E9-9391AFF8FD2B}</Project>
+      <Name>Eto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eto.Gl\Eto.Gl.csproj">
+      <Project>{510CE98D-2169-48A0-889C-E743417EE5E1}</Project>
+      <Name>Eto.Gl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eto.Gtk\Eto.Gtk2.csproj">
+      <Project>{1FF7BE58-A6A2-4132-8CAF-AA2EF18122A1}</Project>
+      <Name>Eto.Gtk2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eto.Serialization.Xaml\Eto.Serialization.Xaml.csproj">
+      <Project>{FA4BC167-9909-45D2-B86A-D4AE4062A524}</Project>
+      <Name>Eto.Serialization.Xaml</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
